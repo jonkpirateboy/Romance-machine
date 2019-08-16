@@ -13,6 +13,7 @@ pip install pygame
 ```
 
 Download [the script](romance.py) and put it in your home folder, /home/pi/
+
 You'll need to change the list of songs to songs that you have on your Pi.
 
 Open console and enter
