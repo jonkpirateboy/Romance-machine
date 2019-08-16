@@ -1,22 +1,24 @@
 #coding=utf-8
 
-#importera biblioteket for att prata med saker över gpio
+#Import librarys
 import RPi.GPIO as GPIO
 import time
 import random
 from pygame import mixer
 
-#sätt gpio till rätt läge
+#Set GPIO
 GPIO.setmode(GPIO.BCM)
 
-#sätt in vilka pins vad är kopplat
+#Set pin to use
 buttonPin = 23
 
-#säg åt den pin som knappen är kopplad till att den ska lyssna på input
+#Listen for button press
 GPIO.setup(buttonPin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-#spin that wheel, dj
+#Use mixer
 mixer.init()
+
+#Put songs in array
 dirtySongs = [
 	'/home/pi/mp3/careless_whisper.mp3', 
 	'/home/pi/mp3/i_want_to_know_what_love_is.mp3', 
@@ -26,18 +28,24 @@ dirtySongs = [
 	'/home/pi/mp3/sexual_healing.mp3'
 ]
 
-#en loop som körs om och om igen och lyssnar på knapptryck
+#Set state of button
 oldState = True
-#i=0
+
+#loop button state
 while True:
-  #hämta staten på knappen
+  #Get button state
   buttonState = GPIO.input(buttonPin)
   
   if buttonState != oldState:
     if buttonState == False:
-        #sätt på musiken
-        song = random.choice(dirtySongs)
-        mixer.stop()
+      #Choose song
+      song = random.choice(dirtySongs)
+      #Play the song if no song is playing
+      if mixer.music.get_busy() == False:
         mixer.music.load(song)
         mixer.music.play()
+        time.sleep(1)
+      #If a song is playing, stop it
+      else:
+        mixer.music.stop()
         time.sleep(1)
