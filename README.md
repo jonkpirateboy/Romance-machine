@@ -20,7 +20,7 @@ sudo nano /etc/rc.local
 ```
 You'll need to change the list of songs to songs that you have on your Pi.
 
-In that file you enter 
+In /etc/rc.local you enter 
 ```
 python /home/pi/romance.py
 ```
