@@ -5,7 +5,7 @@ Install [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) on a Raspber
 
 Buy a [button](https://www.kjell.com/se/produkter/el-verktyg/elektronik/elektromekanik/strombrytare/tryckstrombrytare/strombrytare-1-pol-fran-(till)-rod-p36011?fbclid=IwAR0jVSrSGsIbbd9ozXCtYwZDZijL6pdAcMhqYPt5dp17MCO4nXWOHzEONdA) and [jumper wires](https://www.kjell.com/se/produkter/el-verktyg/utvecklingskit/arduino/tillbehor/luxorparts-delbar-kopplingskabel-40-pol-hane-hona-p87900)
 
-Connect two wires to pins 5 and 23, and to your button
+Connect two wires to pins 6 and 23, and to your button
 
 Open console and enter
 ```
